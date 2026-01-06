@@ -32,10 +32,13 @@ public class SubmachineGun : Weapons
                     option.OnSelect = () => { this.setPower(getAttackPower() + n); };
                     break;
                 case 1:
-                    n = Random.Range(0.1f * rarity * rarity, 0.5f * rarity * rarity);
+                    n = Random.Range(0.01f * rarity * rarity, 0.1f * rarity * rarity);
                     option.Name = "Attack Speed Up";
                     option.Description = $"Increase Attack Speed by {n:F1}";
-                    option.OnSelect = () => { this.setSpeed(getAttackSpeed() + n); };
+                    option.OnSelect = () => {
+                        float s = Mathf.Max(0.01f, getAttackSpeed() - n);
+                        this.setSpeed(s);
+                    };
                     break;
                 case 2:
                     n = Random.Range(0.15f * rarity * rarity, 0.45f * rarity * rarity);

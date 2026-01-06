@@ -10,6 +10,7 @@ public class Scenes : MonoBehaviour
     public Character character;
     [SerializeField] private float time;
     [SerializeField] public List<Monsters> monstersList;
+    [SerializeField] private List<Monsters> Bosses;
     [SerializeField] private float spawnFrequency = 1.5f;
     [SerializeField] private int amount,limit;
     [SerializeField] private int level = 0;
@@ -17,6 +18,7 @@ public class Scenes : MonoBehaviour
 
     WaitForSeconds SpawnFrequencyUP = new WaitForSeconds(60);
     WaitForSeconds LevelUP = new WaitForSeconds(120);
+    WaitForSeconds BossSpawn = new WaitForSeconds(600);
 
     // ╔м╘геч©Х
     IEnumerator Spawn()
@@ -85,6 +87,15 @@ public class Scenes : MonoBehaviour
             }
             monsterLevel++;
             yield return LevelUP;
+        }
+    }
+    IEnumerator SpawnBoss()
+    {
+        foreach(Monsters boss in Bosses)
+        {
+            yield return BossSpawn;
+            Vector3 randomPosition = new Vector3(Random.Range(-Size.x, Size.x), Random.Range(-Size.y, Size.y), 0);
+            Instantiate(boss, randomPosition, Quaternion.identity);
         }
     }
     void Start()

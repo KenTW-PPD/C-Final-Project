@@ -399,6 +399,10 @@ MonoBehaviour:
   - {fileID: 4991555132980173201, guid: f98e15ee8456a3240a09f5b36c82d00a, type: 3}
   - {fileID: 8123359274158042646, guid: ce224b65336ed2f4ab18c6c2d5a4ba80, type: 3}
   - {fileID: 5429093375930712613, guid: 1595bdcceead12b438e038b7cfc5600c, type: 3}
+  Bosses:
+  - {fileID: 1852002693402772341, guid: 32cf73ee169679b498eab12490ea391c, type: 3}
+  - {fileID: 2590794252511034471, guid: 1b45412b64cfcab4db7494056cd2af61, type: 3}
+  - {fileID: 1852002693402772341, guid: 32cf73ee169679b498eab12490ea391c, type: 3}
   spawnFrequency: 1.5
   amount: 0
   limit: 0
@@ -2339,11 +2343,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 115204238}
   - {fileID: 619394802}
   - {fileID: 53619395}
   - {fileID: 1976880724}
   - {fileID: 1285145268}
-  - {fileID: 115204238}
   - {fileID: 1461267634}
   - {fileID: 1369081016}
   - {fileID: 1708762034}

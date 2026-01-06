@@ -55,7 +55,7 @@ public class Monsters : MonoBehaviour
         }
     }
     
-    private void DropItem()
+    public virtual void DropItem()
     {
         if(Health <= 0)
         {
