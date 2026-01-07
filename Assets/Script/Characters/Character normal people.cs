@@ -9,11 +9,11 @@ public class Normoral_people : Character
     private void Awake()
     {
         // �]�w����ƭ�
-        setHealth(40.0f);
-        setMoveSpeed(5.0f);
+        setHealth(50.0f);
+        setMoveSpeed(10.0f);
         setDefense(1.0f);
-        setAttackPower(1.0f);
-        setPickupRangeSize(5.0f);
+        setAttackPower(10.0f);
+        setPickupRangeSize(50.0f);
         ExperiencePoint = 0;
 
         foreach (Weapons Weapon in WeaponList)

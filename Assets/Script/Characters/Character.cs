@@ -6,21 +6,21 @@ using UnityEngine.InputSystem;
 using System.Collections.Generic;
 public class Character : MonoBehaviour , Prize
 {
-    // ¨ä¥L
+    // ï¿½ï¿½L
     public LayerMask enemyLayer;
     public GameOverUI gameover;
     
-    // ©Ò«ù¦³ªZ¾¹
+    // ï¿½Ò«ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½
     public List<Weapons> WeaponList;
 
-    // ¨¤¦âÄÝ©Ê¬ÛÃö
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ý©Ê¬ï¿½ï¿½ï¿½
     [SerializeField] private float Health;
     [SerializeField] private float MoveSpeed;
     [SerializeField] private float Defense;
     [SerializeField] private float AttackPower;
     [SerializeField] private float PickupRangeSize;
 
-    // ¸gÅç¡Bµ¥¯Å¬ÛÃö
+    // ï¿½gï¿½ï¿½Bï¿½ï¿½ï¿½Å¬ï¿½ï¿½ï¿½
     public float ExperiencePoint;
     [SerializeField] private int Level;
     public UpgradeUI upgradeUI;
@@ -52,13 +52,13 @@ public class Character : MonoBehaviour , Prize
     }
     public void LevelUP()
     {
-        // ³]¤@¤½¦¡¨M©w¤U¤@µ¥¯Å¤É¯Å©Ò»Ý¸gÅç­È
+        // ï¿½]ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Mï¿½wï¿½Uï¿½@ï¿½ï¿½ï¿½Å¤É¯Å©Ò»Ý¸gï¿½ï¿½ï¿½
         float target = 300 * Level * 0.1f + ((Level - 1) * 1.1f);
         if (ExperiencePoint >= target)
         {
             ExperiencePoint -= target;
             Level += 1;
-            // ¤É¯Å¤¶­±
+            // ï¿½É¯Å¤ï¿½ï¿½ï¿½
             Time.timeScale = 0f;
             upgradeUI.GetComponent<Canvas>().enabled = true;
             upgradeUI.BuildUpgradeUI();
@@ -68,7 +68,7 @@ public class Character : MonoBehaviour , Prize
 
     private void FindtheNearestMonster(Weapons Weapon)
     {
-        // §ì¨ú¯S©w½d³ò¤ºªºMonster
+        // ï¿½ï¿½ï¿½ï¿½Sï¿½wï¿½dï¿½ò¤ºªï¿½Monster
         Collider2D[] monsters = Physics2D.OverlapCircleAll(this.transform.position,
             Weapon.getAttackRange(),enemyLayer);
 
@@ -85,13 +85,13 @@ public class Character : MonoBehaviour , Prize
             
         }
         //Debug.Log("Nearest Monster: " + nearestMonster);
-        // §ðÀ»
+        // ï¿½ï¿½ï¿½ï¿½
         float power = AttackPower + Weapon.getAttackPower();
         if (nearestMonster != null)
         {
             Weapon.Fire(this.transform.position, nearestMonster.transform.position, power);
         }
-        //else { Debug.LogWarning("·j´Mµ²§ô¡G½d³ò¤º¨S¦³¥ô¦ó¼ÐÅÒ¬° 'Monsters' ªºª«¥ó¡I"); }
+        //else { Debug.LogWarning("ï¿½jï¿½Mï¿½ï¿½ï¿½ï¿½Gï¿½dï¿½ò¤º¨Sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¬ï¿½ 'Monsters' ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½I"); }
 
 
     }
@@ -139,12 +139,12 @@ public class Character : MonoBehaviour , Prize
         
     }
 
-    // ½T©w§ðÀ»½d³ò¥Îªº
+    // ï¿½Tï¿½wï¿½ï¿½ï¿½ï¿½ï¿½dï¿½ï¿½Îªï¿½
     /*
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        // ³o¸Ìªº20.0f¸ò Weapon.getAttackRange() ¤@­P
+        // ï¿½oï¿½Ìªï¿½20.0fï¿½ï¿½ Weapon.getAttackRange() ï¿½@ï¿½P
         Gizmos.DrawWireSphere(this.transform.position, 20.0f);
     }
     */
