@@ -8,12 +8,12 @@ public class Normoral_people : Character
     private List<Weapons> ActiveWeapons = new List<Weapons>();
     private void Awake()
     {
-        // ³]©w¨¤¦â¼Æ­È
-        setHealth(20.0f);
-        setMoveSpeed(3.0f);
+        // ï¿½]ï¿½wï¿½ï¿½ï¿½ï¿½Æ­ï¿½
+        setHealth(40.0f);
+        setMoveSpeed(5.0f);
         setDefense(1.0f);
         setAttackPower(1.0f);
-        setPickupRangeSize(2.0f);
+        setPickupRangeSize(5.0f);
         ExperiencePoint = 0;
 
         foreach (Weapons Weapon in WeaponList)
@@ -25,7 +25,7 @@ public class Normoral_people : Character
             ActiveWeapons.Add(w);
             StartCoroutine(AttackRoutine(w));
         }
-        // ±N¦³«ü©w³õ¤W¯S©wª«¥ó¤§ListÂÐ»\¤÷¶µªºList
+        // ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½wï¿½ï¿½ï¿½Wï¿½Sï¿½wï¿½ï¿½ï¿½ï¿½Listï¿½Ð»\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½List
         WeaponList = ActiveWeapons;
     }
 
@@ -41,7 +41,7 @@ public class Normoral_people : Character
                 n = Random.Range(0.1f * rarity * rarity, 0.5f * rarity * rarity);
                 option.Name = "Attack Power Up";
                 option.Description = $"Increase Attack Power by {n:F1}";
-                // lambda ªí¹F¦¡®·ÀòÅÜ¶q n ªº­È
+                // lambda ï¿½ï¿½Fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶q n ï¿½ï¿½ï¿½ï¿½
                 option.OnSelect = () => { this.setAttackPower(getAttackPower() + n); };
                 break;
             case 1:
