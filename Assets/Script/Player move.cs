@@ -3,28 +3,39 @@ using UnityEngine.InputSystem;
 
 public class Player_move : MonoBehaviour
 {
+    public Scenes MainScene;
+    [SerializeField] private Vector2 mapSize;
     public Character player;
     public Vector2 moveDirection;
 
 
     public void PlayerMove()
     {
+        Vector2 PlayerPosition = player.GetComponent<Transform>().position;
         moveDirection = Vector2.zero;
         if (Keyboard.current.wKey.isPressed)
         {
-            moveDirection.y = 1;
+            if(PlayerPosition.y < mapSize.y)
+                moveDirection.y = 1;
+            else moveDirection.y = 0;
         }
         if (Keyboard.current.sKey.isPressed)
         {
-            moveDirection.y = -1;
+            if(PlayerPosition.y > -mapSize.y)
+                moveDirection.y = -1;
+            else moveDirection.y = 0;
         }
         if (Keyboard.current.dKey.isPressed)
         {
-            moveDirection.x = 1;
+            if(PlayerPosition.x < mapSize.x)
+                moveDirection.x = 1;
+            else moveDirection.x = 0;
         }
         if (Keyboard.current.aKey.isPressed)
         {
-            moveDirection.x = -1;
+            if (PlayerPosition.x > -mapSize.x)
+                moveDirection.x = -1;
+            else moveDirection.x = 0;
         }
 
     }
@@ -38,6 +49,7 @@ public class Player_move : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
+        mapSize = MainScene.Size;
     }
 
     // Update is called once per frame

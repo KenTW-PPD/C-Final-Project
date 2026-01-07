@@ -24,6 +24,13 @@ public class GameOverUI : MonoBehaviour
         Restart.onClick.AddListener(() => {
             SceneManager.LoadScene(currentScene.name);
         });
+        Quit.onClick.RemoveAllListeners();
+        Quit.onClick.AddListener(QuitGame);
+    }
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
     }
     
 
