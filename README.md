@@ -24,7 +24,7 @@ Unity這是一個基於 Unity 引擎開發的  **類吸血鬼（Vampire Survivor
     - 點擊 Add -> Add project from disk。    
     - 選擇下載後的原始碼資料夾。    
   - 編譯與執行：
-    - 在 Project 視窗中找到 Scenes 資料夾，打開 SampleScene。    
+    - 在 Project 視窗中找到 Scenes 資料夾，打開 SimpleStartScene。    
     - 點擊 Unity 頂部的 Play 按鈕即可開始測試。    
     - 若要輸出執行檔：File -> Build Settings -> Build    
 
