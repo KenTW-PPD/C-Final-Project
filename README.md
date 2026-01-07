@@ -14,7 +14,7 @@ Unity這是一個基於 Unity 引擎開發的  **類吸血鬼（Vampire Survivor
 ## 開發環境與安裝指南
 - 開發環境Unity Version: 6000.2.15f1    
 - Language: C#    
-- Platform: PC    
+- Platform: Windows    
 - 安裝步驟
   - 複製專案：    
   ` git clone https://github.com/KenTW-PPD/C-Final-Project.git `    
