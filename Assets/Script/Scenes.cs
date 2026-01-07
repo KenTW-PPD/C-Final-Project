@@ -20,7 +20,7 @@ public class Scenes : MonoBehaviour
     WaitForSeconds LevelUP = new WaitForSeconds(120);
     WaitForSeconds BossSpawn = new WaitForSeconds(600);
 
-    // ¥Í©ÇÅÞ¿è
+    // ï¿½Í©ï¿½ï¿½Þ¿ï¿½
     IEnumerator Spawn()
     {
         while (true)
@@ -65,7 +65,7 @@ public class Scenes : MonoBehaviour
     {
         return time;
     }
-    // ÀH®É¶¡¥[§Ö¥Í¦¨³t«×»P¥[¤jÁ`©Çª«¤W­­
+    // ï¿½Hï¿½É¶ï¿½ï¿½[ï¿½Ö¥Í¦ï¿½ï¿½tï¿½×»Pï¿½[ï¿½jï¿½`ï¿½Çªï¿½ï¿½Wï¿½ï¿½
     IEnumerator changeSpawnFrequency()
     {
         while (true)
@@ -76,7 +76,7 @@ public class Scenes : MonoBehaviour
             yield return SpawnFrequencyUP;
         }
     }
-    // ÀH®É¶¡´£¤É©Çª«µ¥¯Å
+    // ï¿½Hï¿½É¶ï¿½ï¿½ï¿½ï¿½É©Çªï¿½ï¿½ï¿½ï¿½ï¿½
     IEnumerator MonstersLevelUP()
     {
         while (true)
@@ -107,6 +107,7 @@ public class Scenes : MonoBehaviour
         StartCoroutine(Spawn());
         StartCoroutine(changeSpawnFrequency());
         StartCoroutine(MonstersLevelUP());
+        StartCoroutine(SpawnBoss());
     }
     void Update()
     {
