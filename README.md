@@ -42,4 +42,4 @@
 
 ## 發布連結
 - itch.io 遊戲頁面：https://catmathes314.itch.io/c-final-project
-- Demo Video：<連結>
+- Demo Video：https://youtu.be/uvrEus9WYck?si=Wi3_1SVAho2W4yk3
