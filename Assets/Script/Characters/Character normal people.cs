@@ -8,7 +8,6 @@ public class Normoral_people : Character
     private List<Weapons> ActiveWeapons = new List<Weapons>();
     private void Awake()
     {
-        // �]�w����ƭ�
         setHealth(50.0f);
         setMoveSpeed(10.0f);
         setDefense(1.0f);
